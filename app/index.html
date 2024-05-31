@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <script src="./js/main.js" defer></script>
+        <title>Chiffre de César</title>
+    </head>
+    <body>
+        <div class="content">
+            <div class="title">
+                <p style="font-size: 25px; color: black;"><b>Caesar Cypher</b></p>
+                Vanilla JS
+            </div>
+            <div class="form">
+                <form>
+                    <label for="shift">Cypher key</label><br>
+                    <input id="shift" name="shift" type="text" data-cy="cypher-key"/><br><br>
+                    <textarea id="text" style="height: 25%;"></textarea><br><br>
+                    <button type="button" id="Cypher" name="Cypher" onclick="applyCaesarCipher()" >Cypher</button>
+                </form>
+            </div>
+            <div class="ceasar-result">
+                <p id="result" style="color: green;"></p>
+            </div>
+        </div>
+    </body>
+</html>
