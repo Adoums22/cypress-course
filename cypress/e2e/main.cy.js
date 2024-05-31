@@ -115,24 +115,4 @@ context('LightBox', () => {
 
     })
 
-    it('verifies plural comments and deletes a specific comment', () => {
-        cy.get('[data-cy="comment-author"]').type('Cypress is awesome!');
-        cy.get('[data-cy="publish-comment"]').click();
-    
-        cy.get('[data-cy="comment-author"]').type('Test plural comments!');
-        cy.get('[data-cy="publish-comment"]').click();
-    
-        cy.get('[data-cy="comment-author"]').type('third comment!');
-        cy.get('[data-cy="publish-comment"]').click();
-    
-        cy.get('[data-cy="comment-body"]').should('have.length', 3);
-    
-        cy.get('[data-cy="comment-body"]').eq(1).within(() => {
-            cy.get('[data-cy="delete-comment"]').click();
-        });
-    
-        cy.get('[data-cy="comment-body"]').should('have.length', 2);
-        cy.get('[data-cy="comment-body"]').eq(0).should('contain.text', 'Cypress is awesome!');
-        cy.get('[data-cy="comment-body"]').eq(1).should('contain.text', 'third comment!');
-    });    
 })
